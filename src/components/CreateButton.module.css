@@ -1,0 +1,22 @@
+.button {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-size: var(--font-size-md);
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-weight: var(--font-weight-bold);
+  border-radius: 8px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.button:hover {
+  background: var(--blue);
+}
+
+.button > * {
+  flex-shrink: 0;
+}
