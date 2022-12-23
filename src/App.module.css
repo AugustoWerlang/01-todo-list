@@ -1,0 +1,47 @@
+.main {
+  margin: 5.6875rem auto 0;
+  width: min(736px, 90%);
+}
+
+.tasksCountersWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue);
+}
+
+.tasksCountersWrapper > * {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tasksCountersWrapper > * + * {
+  color: var(--purple);
+}
+
+.tasksCountersWrapper span {
+  border-radius: 999px;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.tasksWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty {
+  border-top: solid 1px var(--gray-400);
+  border-radius: 8px;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  aign-items: center;
+  place-items: center;
+  gap: 1rem;
+}

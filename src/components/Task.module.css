@@ -1,0 +1,36 @@
+.task {
+  background: var(--gray-400);
+  color: var(--gray-100);
+  display: flex;
+  gap: 0.75rem;
+  border-radius: 8px;
+  padding: 1rem;
+  justify-content: space-between;
+  font-size: var(--font-size-md);
+}
+
+.task > h2 {
+  font: inherit;
+}
+
+.task > div {
+
+}
+
+.task > button {
+  background: transparent;
+  color: var(--gray-300);
+  transition: color 0.2s, background-color 0.2s;
+  border: none;
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task > button:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+}

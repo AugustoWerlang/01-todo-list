@@ -37,14 +37,33 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
   padding: 0;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
   font: inherit;
 }
 
+/** ACCESSIBILITY */
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
+/** BASE STYLES */
 body {
   min-height: 100vh;
   background: var(--gray-600);
@@ -56,16 +75,8 @@ body {
   line-height: 1.4;
 }
 
-img,
-picture,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-}
-
-/** ACCESSIBILITY */
-:focus {
-  outline: transparent;
-  box-shadow: 0 0 0 2px var(--purple-dark);
+@media(max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
 }
