@@ -1,29 +1,34 @@
-import { Trash } from "phosphor-react";
-import { useState } from "react";
+import { Trash, Check } from "phosphor-react";
+import { useId } from "react";
 import styles from "./Task.module.css";
 
 interface CreateTaskProps {
-  id: number;
+  id: string;
   title: string;
   isDone: boolean;
-  callback: (id: number) => any;
+  changeTaskState: (id: string) => any;
+  deleteTask: (id: string) => any;
 }
 
-export function Task(props: CreateTaskProps) {
-  const [isDone, setIsDone] = useState(props.isDone);
+export function Task({ id, isDone, title, changeTaskState, deleteTask}: CreateTaskProps) {
+  const checkIsDoneId = useId();
 
-  const handleIsDoneChange = () => {
-    setIsDone(!isDone);
+  const handleTaskStateChange = () => {
+    changeTaskState(id);
+  }
+
+  const handleDeleteTask = () => {
+    deleteTask(id);
   }
 
   return(
-    <div className={styles.task}>
-      <div>
-        <input type="checkbox" checked={isDone} onChange={handleIsDoneChange} />
-        <span></span>
-      </div>
-      <h2>{props.title}</h2>
-      <button onClick={() => props.callback(props.id)}><Trash size={16} /></button>
-    </div>
+    <label htmlFor={checkIsDoneId} className={`${styles.task} ${isDone && styles.done}`}>
+      <input id={checkIsDoneId} type="checkbox" checked={isDone} onChange={handleTaskStateChange} />
+      <span>
+        <Check size={14} weight="bold" />
+      </span>
+      <h2>{title}</h2>
+      <button onClick={handleDeleteTask}><Trash size={16} /></button>
+    </label>
   )
 }
