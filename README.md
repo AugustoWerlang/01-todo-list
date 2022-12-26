@@ -1,1 +1,1 @@
-# Desafio: Praticando Conceitos (Trilha de ReactJS)
+# Desafio 01 - Praticando os conceitos do ReactJS
